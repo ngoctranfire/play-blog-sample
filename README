@@ -14,6 +14,7 @@ Steps to Import into IntelliJ IDEA:
 6. Under task: fill in with "run".
 
 ![Setup Guide Step by Step Photos][setupSteps]
+[setupSteps]: https://raw.githubusercontent.com/ngoctranfire/play-blog-sample/master/readme-guide-images/setup/setup-guide.jpg "Setting up Guide"
 
 Notes
 -----
@@ -23,4 +24,3 @@ to avoid any "conflicting cross-version in sbt" that results from scala-xml, and
 those are using scala 2.12.M06.
 
 
-[setupSteps]: https://github.com/ngoctranfire/play-blog-sample/blob/master/readme-guide-images/setup/setup-guide.jpg "Setting up Guide"
