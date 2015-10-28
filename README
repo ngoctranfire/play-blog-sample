@@ -1,4 +1,22 @@
-This is your new Play application
+This is a play-scala app sample showing how to implement a simple blog site.
 =================================
 
 This file will be packaged with your application, when using `activator dist`.
+
+
+Steps to Import into IntelliJ IDEA:
+-----------------------------------
+1. Open IntelliJ IDEA.
+2. Import Project. Point it to where you cloned this repository
+3. Make sure to set *SBT* as the external module builder for your project.
+4. In terminal, make sure you type in *activator compile* to compile your resources first.
+5. Now setup a SBT task in your IntelliJ.
+6. Under task: fill in with "run".
+...![Setup Guide](https://github.com/ngoctranfire/play-blog-sample/readme-guide-images/setup/setup-guide.jpg "Setting up Guide")
+
+Notes
+-----
+*In our build.sbt, we specifically add:
+"dependencyOverrides += "org.scala-lang" % "scala-compiler" % scalaVersion.value"
+to avoid any "conflicting cross-version in sbt" that results from scala-xml, and scala-parser-combination since
+those are using scala 2.12.M06.
