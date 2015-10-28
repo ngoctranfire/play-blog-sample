@@ -13,7 +13,7 @@ Steps to Import into IntelliJ IDEA:
 5. Now setup a SBT task in your IntelliJ.
 6. Under task: fill in with "run".
 
-[Setup Guide Step by Step Photos][setupSteps]
+![Setup Guide Step by Step Photos][setupSteps]
 
 Notes
 -----
