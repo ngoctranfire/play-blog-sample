@@ -13,8 +13,7 @@ Steps to Import into IntelliJ IDEA:
 5. Now setup a SBT task in your IntelliJ.
 6. Under task: fill in with "run".
 
-![Setup Guide Step by Step Photos][setupSteps]
-[setupSteps]: https://raw.githubusercontent.com/ngoctranfire/play-blog-sample/master/readme-guide-images/setup/setup-guide.jpg "Setting up Guide"
+![Setup Guide Step by Step Photos](https://raw.githubusercontent.com/ngoctranfire/play-blog-sample/master/readme-guide-images/setup/setup-guide.jpg "Setting up Guide")
 
 Notes
 -----
