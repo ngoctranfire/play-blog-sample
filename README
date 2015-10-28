@@ -12,7 +12,8 @@ Steps to Import into IntelliJ IDEA:
 4. In terminal, make sure you type in *activator compile* to compile your resources first.
 5. Now setup a SBT task in your IntelliJ.
 6. Under task: fill in with "run".
-...![Setup Guide](https://github.com/ngoctranfire/play-blog-sample/readme-guide-images/setup/setup-guide.jpg "Setting up Guide")
+
+[Setup Guide Step by Step Photos][setupSteps]
 
 Notes
 -----
@@ -20,3 +21,6 @@ Notes
 "dependencyOverrides += "org.scala-lang" % "scala-compiler" % scalaVersion.value"
 to avoid any "conflicting cross-version in sbt" that results from scala-xml, and scala-parser-combination since
 those are using scala 2.12.M06.
+
+
+[setupSteps]: https://github.com/ngoctranfire/play-blog-sample/blob/master/readme-guide-images/setup/setup-guide.jpg "Setting up Guide"
