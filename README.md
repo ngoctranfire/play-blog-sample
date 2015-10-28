@@ -19,7 +19,7 @@ Notes
 -----
 *In our build.sbt, we specifically add:
 "dependencyOverrides += "org.scala-lang" % "scala-compiler" % scalaVersion.value"
-to avoid any "conflicting cross-version in sbt" that results from scala-xml, and scala-parser-combination since
-those are using scala 2.12.M06.
+to avoid any "conflicting cross-version in sbt" that results from scala-xml, and
+scala-parser-combination since those are using scala 2.12.M06.
 
 
