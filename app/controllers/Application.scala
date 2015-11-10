@@ -1,27 +1,39 @@
 package controllers
 
-import models.{DB, Person}
-import play.api._
+import models.Cat
+import play.api.Play
 import play.api.data.Form
-import play.api.data.Forms._
-import play.api.mvc._
+import play.api.data.Forms.mapping
+import play.api.data.Forms.text
+import play.api.db.slick.DatabaseConfigProvider
+import play.api.db.slick.HasDatabaseConfig
+import play.api.libs.concurrent.Execution.Implicits.defaultContext
+import play.api.mvc.Action
+import play.api.mvc.Controller
+import slick.driver.JdbcProfile
+import tables.CatTable
 
-class Application extends Controller {
+class Application extends Controller with CatTable with HasDatabaseConfig[JdbcProfile]{
+  val dbConfig = DatabaseConfigProvider.get[JdbcProfile](Play.current)
 
-  def index = Action {
-    Ok(views.html.index("Hello World."))
+  import driver.api._
+
+  //create an instance of the table
+  val Cats = TableQuery[Cats] //see a way to architect your app in the computers-database sample
+
+  def index = Action.async {
+    db.run(Cats.result).map(res => Ok(views.html.index(res.toList)))
   }
 
-  val personForm: Form[Person] = Form {
+  val catForm = Form(
     mapping(
-      "name" -> text
-    )(Person.apply)(Person.unapply)
-  }
+      "name" -> text(),
+      "color" -> text()
+    )(Cat.apply)(Cat.unapply)
+  )
 
-
-  def addPerson = Action { implicit request =>
-    val person = personForm.bindFromRequest.get
-    DB.save(person)
-    Redirect(routes.Application.index())
+  def insert = Action.async { implicit rs =>
+    val cat = catForm.bindFromRequest.get
+    db.run(Cats += cat).map(_ => Redirect(routes.Application.index))
   }
 }

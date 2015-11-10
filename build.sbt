@@ -7,18 +7,19 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 scalaVersion := "2.11.6"
 
 libraryDependencies ++= Seq(
-  jdbc,
   cache,
   ws,
-  specs2 % Test
+  specs2 % Test,
+  "com.typesafe.play" %% "play-slick" % "1.1.1",
+  "com.typesafe.play" %% "play-slick-evolutions" % "1.1.1",
+  "org.postgresql" % "postgresql" % "9.4-1204-jdbc42"
 )
-libraryDependencies += "org.sorm-framework" % "sorm" % "0.3.18"
-
-dependencyOverrides += "org.scala-lang" % "scala-compiler" % scalaVersion.value
-
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
 
 // Play provides two styles of routers, one expects its actions to be injected, the
 // other, legacy style, accesses its actions statically.
 routesGenerator := InjectedRoutesGenerator
+
+
+fork in run := true

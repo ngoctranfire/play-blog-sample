@@ -17,9 +17,7 @@ Steps to Import into IntelliJ IDEA:
 
 Notes
 -----
-*In our build.sbt, we specifically add:
-"dependencyOverrides += "org.scala-lang" % "scala-compiler" % scalaVersion.value"
-to avoid any "conflicting cross-version in sbt" that results from scala-xml, and
-scala-parser-combination since those are using scala 2.12.M06.
+* We are now using a Slick as our "Scala Language Integrated Connection Kit". Find out more at [Slick's Site](http://slick.typesafe.com/)
+
 
 
