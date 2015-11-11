@@ -1,10 +1,10 @@
-New log file opened at Mon Nov 09 23:39:32 PST 2015 by 73585@PandaBoxers.local
-Taking next connection to: 63327
-New client attempting to connect on port: 63328-63327
-  Address = /169.254.109.128:63327
-This client on port 63328 has uuid fb2b4c98-685f-4d7f-977f-5fd30b04958a configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-fb2b4c98-685f-4d7f-977f-5fd30b04958a
-Taking next connection to: 63327
+New log file opened at Tue Nov 10 23:54:30 PST 2015 by 70770@PandaBoxers.local
+Taking next connection to: 51320
+New client attempting to connect on port: 51321-51320
+  Address = /169.254.109.128:51320
+This client on port 51321 has uuid 7beb0cda-80ac-4b04-94ca-cac2c325b97e configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-7beb0cda-80ac-4b04-94ca-cac2c325b97e
+Taking next connection to: 51320
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 63327
+Taking next connection to: 51320
