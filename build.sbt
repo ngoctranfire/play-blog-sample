@@ -4,7 +4,7 @@ version := "1.0-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq(
   cache,
@@ -12,7 +12,11 @@ libraryDependencies ++= Seq(
   specs2 % Test,
   "com.typesafe.play" %% "play-slick" % "1.1.1",
   "com.typesafe.play" %% "play-slick-evolutions" % "1.1.1",
-  "org.postgresql" % "postgresql" % "9.4-1204-jdbc42"
+  "org.postgresql" % "postgresql" % "9.4-1204-jdbc42",
+  //Testing Frameworks
+  "org.scalatest" %% "scalatest" % "2.2.1" % "test",
+  "org.scalatestplus" %% "play" % "1.2.0" % "test",
+  "org.scalamock" %% "scalamock-scalatest-support" % "3.2" % "test"
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
@@ -22,4 +26,15 @@ resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
 routesGenerator := InjectedRoutesGenerator
 
 
-fork in run := true
+//To fork all test tasks (test, test-only, and test-quick) and run tasks (run, run-main, test:run, and test:run-main),
+fork := true
+
+/**
+  * DEVELOPMENT JAVA OPTIONS
+  */
+// Since run is forked (different tasks are being down in different jvm processes, we need to specify options
+// in this way
+javaOptions in run ++= Seq(
+  "-Dconfig.resource=devtest-conf/devtest.conf",
+  "-Dhttp.port=1234"
+)

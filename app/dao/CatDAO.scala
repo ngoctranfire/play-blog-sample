@@ -4,16 +4,17 @@ import javax.inject.Inject
 
 import models.Cat
 import play.api.db.slick.{DatabaseConfigProvider, HasDatabaseConfigProvider}
-import slick.driver.JdbcProfile
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
+import slick.driver.JdbcProfile
 
 import scala.concurrent.Future
 
 /**
  * Created by ngoctranfire on 11/10/15.
  */
-class CatDAO @Inject()(protected val dbConfigProvider: DatabaseConfigProvider)
+class CatDAO @Inject() (protected val dbConfigProvider: DatabaseConfigProvider)
   extends HasDatabaseConfigProvider[JdbcProfile] {
+
   import driver.api._
 
   private val Cats = TableQuery[CatsTable]

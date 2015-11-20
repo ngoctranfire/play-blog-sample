@@ -1,17 +1,17 @@
 package controllers
 
-import dao.CatDAO
-import dao.DogDAO
 import javax.inject.Inject
 
-import models.{Dog, Cat}
+import dao.{CatDAO, DogDAO}
+import models.{Cat, Dog}
 import play.api.data.Form
 import play.api.data.Forms.{mapping, text}
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
 import play.api.mvc.{Action, Controller}
 
 
-class Application @Inject() (catDao: CatDAO, dogDao: DogDAO) extends Controller{
+class Application @Inject() (var catDao: CatDAO, var dogDao: DogDAO) extends Controller{
+
   def index = Action.async {
     catDao.all().zip(dogDao.all()).map {case (cats, dogs) => Ok(views.html.index(cats, dogs)) }
   }

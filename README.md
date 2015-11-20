@@ -1,9 +1,17 @@
 This is a play-scala app sample showing how to implement a simple blog site.
 =================================
 
+Pre-configurations:
+-------------------
+1) You have postgres installed and running.
+2) You have a database named play_blog_sample.
+3) You have the play framework installed (with activator).
+
 This file will be packaged with your application, when using `activator dist`.
 
-
+Steps To Run The Project:
+------------------------------
+1. activator run
 Steps to Import into IntelliJ IDEA:
 -----------------------------------
 1. Open IntelliJ IDEA.
@@ -12,6 +20,9 @@ Steps to Import into IntelliJ IDEA:
 4. In terminal, make sure you type in *activator compile* to compile your resources first.
 5. Now setup a SBT task in your IntelliJ.
 6. Under task: fill in with "run".
+
+
+
 
 ![Setup Guide Step by Step Photos](https://raw.githubusercontent.com/ngoctranfire/play-blog-sample/master/readme-guide-images/setup/setup-guide.jpg "Setting up Guide")
 
